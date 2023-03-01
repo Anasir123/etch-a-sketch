@@ -1,0 +1,22 @@
+.cell {
+  border: 1px solid gray;
+  min-width: 20px;
+  min-height: 20px;
+  display: inline-block;
+  margin-right: 2px;
+  flex-grow: 1;
+}
+
+.gridRow {
+  display: flex;
+  flex-grow: 1;
+}
+
+#container {
+  width: 700px;
+  max-width: 700px;
+  height: 700px;
+  max-height: 700px;
+  display: flex;
+  flex-direction: column;
+}

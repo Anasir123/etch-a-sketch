@@ -19,6 +19,15 @@ function makeColumns(cellNum) {
 }
 
 function defaultGrid() {
-  makeRows(16);
-  makeColumns(16);
+  makeRows(10);
+  makeColumns(10);
 }
+
+defaultGrid();
+
+const newCells = Array.from(cells);
+newCells.forEach((cell) => {
+  cell.addEventListener("mouseover", () =>
+    cell.setAttribute("style", "background-color: #457b9d")
+  );
+});
