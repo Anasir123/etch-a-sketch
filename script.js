@@ -18,19 +18,34 @@ function makeColumns(cellNum) {
   }
 }
 
-function createGrid(num = 2) {
+function createGrid(num = 10) {
   makeRows(num);
   makeColumns(num);
 }
 
 createGrid();
 
-const newCells = Array.from(cells);
-newCells.forEach((cell) => {
-  cell.addEventListener("mouseover", () =>
-    cell.setAttribute("style", "background-color: #457b9d")
-  );
-});
+function clearGrid() {
+  container.innerHTML = "";
+}
+
+function applyMouseoverChange() {
+  const newCells = Array.from(cells);
+  newCells.forEach((cell) => {
+    cell.addEventListener("mouseover", () =>
+      cell.setAttribute("style", "background-color: #457b9d")
+    );
+  });
+}
+
+applyMouseoverChange();
+
+// const newCells = Array.from(cells);
+// newCells.forEach((cell) => {
+//   cell.addEventListener("mouseover", () =>
+//     cell.setAttribute("style", "background-color: #457b9d")
+//   );
+// });
 
 function getUserInput() {
   let num;
@@ -39,7 +54,9 @@ function getUserInput() {
     num = prompt("Please enter the size of the grid (max of 100!)", "32");
   } while (num > 100 || num < 2);
 
+  clearGrid();
   createGrid(num);
+  applyMouseoverChange();
 }
 
 let button = document.querySelector("#input");
