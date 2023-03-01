@@ -18,12 +18,12 @@ function makeColumns(cellNum) {
   }
 }
 
-function defaultGrid() {
-  makeRows(10);
-  makeColumns(10);
+function createGrid(num = 2) {
+  makeRows(num);
+  makeColumns(num);
 }
 
-defaultGrid();
+createGrid();
 
 const newCells = Array.from(cells);
 newCells.forEach((cell) => {
@@ -31,3 +31,16 @@ newCells.forEach((cell) => {
     cell.setAttribute("style", "background-color: #457b9d")
   );
 });
+
+function getUserInput() {
+  let num;
+
+  do {
+    num = prompt("Please enter the size of the grid (max of 100!)", "32");
+  } while (num > 100 || num < 2);
+
+  createGrid(num);
+}
+
+let button = document.querySelector("#input");
+button.addEventListener("click", getUserInput);
