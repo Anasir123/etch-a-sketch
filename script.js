@@ -40,13 +40,6 @@ function applyMouseoverChange() {
 
 applyMouseoverChange();
 
-// const newCells = Array.from(cells);
-// newCells.forEach((cell) => {
-//   cell.addEventListener("mouseover", () =>
-//     cell.setAttribute("style", "background-color: #457b9d")
-//   );
-// });
-
 function getUserInput() {
   let num;
 
